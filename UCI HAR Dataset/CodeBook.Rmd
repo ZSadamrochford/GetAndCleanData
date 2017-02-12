@@ -1,0 +1,19 @@
+---
+title: "Get And Clean Data"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Final Project
+
+The run_analysis.R script downloads and cleans data from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip using the following steps:
+
+1. Download data to current workint directory inside "UCI HAR Dataset" folder.
+2. Unzips ZIP files.
+3. Merges files using `cbind` and `rbind` (assumes data is ordered identically).
+4. Cleans column names in Tidy format.
+5. Drops all by mean and standard deviation metric columns.
+6. Aggregates by acitivity and subject, and calculates mean of each field.
+7. Saves results to `activity_subj_mean.txt`.
